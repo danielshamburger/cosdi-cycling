@@ -1,0 +1,384 @@
+@import url('https://rsms.me/inter/inter-ui.css');
+html { font-family: 'Inter UI', sans-serif; }
+@supports (font-variation-settings: normal) {
+  html { font-family: 'Inter UI var alt', sans-serif; }
+}
+
+/* ===============================================
+	CSS for COSDI Cycling Team
+ =============================================== */
+
+header {
+	background: #9DD9D2;
+	text-align: center;
+}
+
+.menu-toggle {
+	display: none;
+}
+
+nav li {
+	display: inline-block;
+}
+
+nav li a {
+	text-decoration: none;
+	color: #fff;
+	display: block;
+	padding: 20px;
+	transition: .15s ease color;
+}
+
+nav li a:hover {
+	color: #114B5F;
+}
+
+.wrapper {
+	width: 90%;
+	max-width: 1100px;
+	margin: 0 auto;
+}
+
+h1 {
+	color: #FF6A00;
+	font-weight: 800;
+	font-size: 65px;
+}
+
+h1:nth-child(2) {
+	color: #fff;
+}
+
+h2 {
+	font-weight: 800;
+	font-size: 50px;
+	color: #114B5F;
+	text-align: center;
+	margin-bottom: 50px;
+}
+
+.hero {
+	background: #77C5BA;
+}
+
+.hero .wrapper {
+	position: relative;
+	padding: 150px 0;
+}
+
+.hero p {
+	margin: 40px auto;
+	font-size: 20px;
+	display: block;
+}
+
+.hero h1 {
+	color: #fff;
+	font-weight: 500;
+	letter-spacing: -5px;
+}
+
+.hero h1 .orange {
+	color: #FF6B00;
+	font-weight: 800;
+	letter-spacing: 2px;
+	margin-top: 5px;
+}
+
+.hero h1 span {
+	display: block;
+}
+
+.hero img {
+	position: absolute;
+	right: 0;
+	bottom: -80px;
+	display: block;
+	max-width: 480px;
+}
+
+.hero .button-wrap {
+	margin-top: 30px;
+}
+
+.hero .button {
+	width: 100px;
+}
+
+.hero .button:nth-child(2) {
+	margin-left: 20px;
+}
+
+.button {
+	text-decoration: none;
+	color: #114B5F;
+	border-radius: 10px;
+	font-size: 18px;
+	border: 1px solid #114B5F;
+	padding: 10px 20px;
+	display: inline-block;
+	transition: .15s color ease, .15s background ease;
+	margin: 0 5px;
+	text-align: center;
+}
+
+.button:hover {
+	color: #fff;
+	background: #114B5F;
+}
+
+table {
+	text-align: left;
+	color: #114B5F;
+	font-size: 18px;
+	margin: 50px auto;
+}
+
+th {
+	font-weight: 800;
+	padding: 10px 30px;
+}
+
+td {
+	padding: 10px 30px;
+}
+
+tr {
+	background: #F7F8FA;
+}
+
+tr:nth-child(2n) {
+	background: #fff;
+}
+
+p {
+	color: #114B5F;
+	line-height: 1.7;
+	margin: 0 auto;
+	max-width: 800px
+}
+
+a {
+	color: #114B5F;
+}
+
+img {
+	max-width: 100%;
+}
+
+#races {
+	background: #fff;
+	padding: 200px 0 100px;
+}
+
+#schedule p {
+	text-align: center;
+}
+
+#team {
+	background: #F7F8FA;
+	padding: 100px 0;
+}
+
+#team p {
+	text-align: center;
+}
+
+#team ul {
+	margin: 50px 0;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+#team .rider {
+	width: calc(25% - 40px);
+	margin-bottom: 40px;
+}
+
+#team .rider-name {
+	color: #114B5F;
+	font-size: 20px;
+	display: block;
+	margin: 7px 0 5px;
+	font-weight: 500;
+}
+
+#team .category {
+	font-style: italic;
+	color: #777;
+	font-size: 15px;
+}
+
+#sponsors {
+	padding: 100px 0;
+	text-align: center;
+}
+
+#sponsors p {
+	margin-bottom: 50px;
+}
+
+#sponsors ul {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	margin-top: 50px;
+}
+
+#sponsors .sponsor {
+	width: calc(25% - 50px);
+	margin-bottom: 50px;
+	display: flex;
+	justify-content: center; 
+	align-items: center;
+}
+
+#sponsors .sponsor.title {
+	width: calc(50% - 50px);
+}
+
+#connect {
+	padding: 100px 0;
+	background: #F7F8FA;
+	text-align: center;
+}
+
+footer {
+	text-align: center;
+	padding: 10px 0;
+	background: #114B5F;
+	color: #fff;
+	font-size: 15px;
+}
+
+footer p {
+	color: #fff;
+}
+
+footer a {
+	text-decoration: none;
+	color: #fff;
+}
+
+@media only screen and (max-width: 1050px) {
+	.hero img {
+	    bottom: -30px;
+	    max-width: 400px;
+	}
+}
+
+@media only screen and (max-width: 1000px) {
+	#team .rider {
+		width: calc(25% - 30px);
+		margin-bottom: 30px;
+	}
+
+	#sponsors .sponsor {
+		width: calc(25% - 35px);
+	}
+
+ 	table {
+ 		font-size: 16px;
+ 		line-height: 1.1;
+ 	}
+
+	.hero .wrapper {
+		padding: 100px 0 0 0;
+	}
+
+	.hero-text {
+	    width: 480px;
+    	margin: 0 auto;
+	}
+
+	.hero img {
+		position: relative;
+		display: block;
+		margin: 0 auto;
+		bottom: -80px;
+	}
+}
+
+@media only screen and (max-width: 700px) {
+	#sponsors .sponsor {
+		width: calc(50% - 30px);
+	}
+
+	#sponsors .sponsor.title {
+		width: 100%;
+	}
+
+	#team .rider {
+		width: calc(50% - 40px);
+		margin-bottom: 40px;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	table {
+		font-size: 14px;
+	}
+
+	.menu-toggle {
+		display: block;
+		color: #fff;
+		padding: 20px 0;
+		font-weight: 800;
+		cursor: pointer;
+	}
+	nav {
+		display: none;
+		background: #114B5F;
+		width: 100%;
+		padding: 7px 0;
+	}
+
+	nav li {
+		display: block;
+		width: 100%;
+		font-size: 18px;
+	}
+
+	nav li a {
+		color: #fff;
+		width: 100%;
+		display: block;
+		padding: 10px 0px;
+	}
+
+	nav li a:hover {
+		color: #fff;
+	}
+
+	.hero h1 .orange {
+		letter-spacing: .2px;
+	}
+
+	.hero-text {
+		width: 330px;
+	}
+
+	h1 {
+		font-size: 48px;
+	}
+
+	h2 {
+		font-size: 44px;
+	}
+
+	table {
+		font-size: 14px;
+	}
+
+	th, td {
+		padding: 7px 3px;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	#team .rider {
+		width: calc(50% - 20px);
+	}
+	
+}
