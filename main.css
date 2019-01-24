@@ -249,7 +249,7 @@ footer {
 	padding: 10px 0;
 	background: #114B5F;
 	color: #fff;
-	font-size: 15px;
+	font-size: 14px;
 }
 
 footer p {
@@ -316,6 +316,14 @@ footer a {
 }
 
 @media only screen and (max-width: 600px) {
+	footer span {
+		display: block;
+	}
+
+	footer .middot {
+		display: none;
+	}
+
 	.hero img {
 		width: 350px;
 		max-width: 90%;
