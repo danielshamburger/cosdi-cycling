@@ -1,2 +1,2 @@
 # COSDI Racing
-Website for COSDI Racing
+Development Website for COSDI Racing
