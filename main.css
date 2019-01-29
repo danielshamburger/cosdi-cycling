@@ -39,6 +39,29 @@ nav li a:hover {
 	margin: 0 auto;
 }
 
+.button {
+	text-decoration: none;
+	opacity: 1;
+	transition: .2s ease background;
+    border-radius: 21px;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    background: #114B5F;
+    border: 0;
+    color: #fff;
+	padding: 12px 20px;
+	display: inline-block;
+	transition: .15s color ease, .15s background ease;
+	margin: 0 5px;
+	text-align: center;
+}
+
+.button:hover {
+	background: #25677d;
+}
+
 h1 {
 	color: #FF6A00;
 	font-weight: 800;
@@ -58,7 +81,9 @@ h2 {
 }
 
 .hero {
-	background: #77C5BA;
+	/*background: #77C5BA;*/
+	background: rgb(116,190,174);
+	background: radial-gradient(circle, rgba(116,190,174,1) 0%, rgba(39,163,160,1) 100%);
 }
 
 .hero .wrapper {
@@ -102,29 +127,11 @@ h2 {
 }
 
 .hero .button {
-	width: 100px;
+	width: 120px;
 }
 
 .hero .button:nth-child(2) {
 	margin-left: 20px;
-}
-
-.button {
-	text-decoration: none;
-	color: #114B5F;
-	border-radius: 10px;
-	font-size: 18px;
-	border: 1px solid #114B5F;
-	padding: 10px 20px;
-	display: inline-block;
-	transition: .15s color ease, .15s background ease;
-	margin: 0 5px;
-	text-align: center;
-}
-
-.button:hover {
-	color: #fff;
-	background: #114B5F;
 }
 
 table {
@@ -316,6 +323,11 @@ footer a {
 }
 
 @media only screen and (max-width: 600px) {
+	.hero {
+		background: rgb(116,190,174);
+		background: linear-gradient(180deg, rgba(116,190,174,1) 0%, rgba(39,163,160,1) 100%);
+	}
+
 	footer span {
 		display: block;
 	}
@@ -370,6 +382,11 @@ footer a {
 
 	.hero-text {
 		width: 330px;
+	}
+
+	.hero .button {
+		width: 103px;
+		font-size: 14px;
 	}
 
 	h1 {
