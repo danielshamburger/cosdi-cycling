@@ -42,24 +42,23 @@ nav li a:hover {
 .button {
 	text-decoration: none;
 	opacity: 1;
-	transition: .2s ease background;
+	transition: .2s ease background-color;
     border-radius: 21px;
     font-size: 15px;
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: 1.5px;
-    background: #114B5F;
+    background-color: #114B5F;
     border: 0;
     color: #fff;
 	padding: 12px 20px;
 	display: inline-block;
-	transition: .15s color ease, .15s background ease;
 	margin: 0 5px;
 	text-align: center;
 }
 
 .button:hover {
-	background: #25677d;
+	background-color: #25677d;
 }
 
 h1 {

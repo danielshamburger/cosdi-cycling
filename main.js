@@ -1,5 +1,7 @@
 $(document).ready(function(){
-		
+	
+	AOS.init();
+	
 	// http://stackoverflow.com/questions/7717527/jquery-smooth-scrolling-when-clicking-an-anchor-link/7717572#7717572?newreg=16ca424bc4024b21a4fcc728ea6451d5
 	$('a').click(function(){
 	    $('html, body').animate({
