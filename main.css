@@ -1,15 +1,17 @@
-@import url('https://rsms.me/inter/inter-ui.css');
-html { font-family: 'Inter UI', sans-serif; }
-@supports (font-variation-settings: normal) {
-  html { font-family: 'Inter UI var alt', sans-serif; }
-}
-
 /* ===============================================
 	CSS for COSDI Cycling Team
  =============================================== */
 
+body {
+	font-family: 'Inter', sans-serif;
+}
+
+strong {
+	font-weight: 600;
+}
+
 header {
-	background: #9DD9D2;
+	background: #112D55;
 	text-align: center;
 }
 
@@ -30,7 +32,7 @@ nav li a {
 }
 
 nav li a:hover {
-	color: #114B5F;
+	color: #F36413;
 }
 
 .wrapper {
@@ -48,7 +50,7 @@ nav li a:hover {
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: 1.5px;
-    background-color: #114B5F;
+    background-color: #112D55;
     border: 0;
     color: #fff;
 	padding: 12px 20px;
@@ -58,7 +60,7 @@ nav li a:hover {
 }
 
 .button:hover {
-	background-color: #25677d;
+	background-color: #F36413;
 }
 
 h1 {
@@ -81,8 +83,9 @@ h2 {
 
 .hero {
 	/*background: #77C5BA;*/
-	background: rgb(116,190,174);
-	background: radial-gradient(circle, rgba(116,190,174,1) 0%, rgba(39,163,160,1) 100%);
+	/* background: rgb(116,190,174); */
+	/* background: radial-gradient(circle, rgba(116,190,174,1) 0%, rgba(39,163,160,1) 100%); */
+	background: #c2e0e4;
 }
 
 .hero .wrapper {
@@ -97,7 +100,7 @@ h2 {
 }
 
 .hero h1 {
-	color: #fff;
+	color: #112D55;
 	font-weight: 500;
 	letter-spacing: -5px;
 }
@@ -116,7 +119,7 @@ h2 {
 .hero img {
 	position: absolute;
 	right: 0;
-	bottom: -80px;
+	bottom: 0;
 	display: block;
 	max-width: 480px;
 }
@@ -130,7 +133,7 @@ h2 {
 }
 
 .hero .button:nth-child(2) {
-	margin-left: 20px;
+	margin-left: 8px;
 }
 
 table {
