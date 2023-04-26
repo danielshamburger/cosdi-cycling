@@ -2,10 +2,9 @@
 <!-- Website by Daniel Shamburger http://danielshamburger.com -->
 <html>
 <head>
-	<title>COSDI Racing - Grand Rapids, MI Cycling Team</title>
+	<title>COSDI / VeloLaw Cycling - Grand Rapids, MI Cycling Team</title>
 	<meta charset=utf-8>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="reset.css">
 	<link rel="stylesheet" type="text/css" href="main.css?ver=1.0.4">	
 
 	<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
@@ -25,40 +24,59 @@
 	<meta name="msapplication-TileColor" content="#ffffff">
 	<meta name="msapplication-TileImage" content="ms-icon-144x144.png">
 	<meta name="theme-color" content="#ffffff">
-	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	<!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@300;500;900&family=Merriweather+Sans:ital@1&family=PT+Sans:ital@1&display=swap" rel="stylesheet">
+
 </head>
 <body>
 <main class="page-content">
 	<header>
-		<!-- <img src="images/logo_white.png" width="75" alt="" /> -->
-		<div class="menu-toggle">MENU</div>
-		<nav>
-			<ul class="wrapper">
-				<!-- <li><a href="#news">News</a></li> -->
-				<li><a href="#races">Races</a></li>
-				<li><a href="#team">Team</a></li>
-				<li><a href="#sponsors">Sponsors</a></li>
-				<li><a href="#connect">Connect</a></li>
-			</ul>
-		</nav>
+		<div class="wrapper">
+			<!-- <img src="images/logo_white.png" width="75" alt="" /> -->
+			<div class="menu-toggle">MENU</div>
+			<div class="site-heading">
+				<a href="#">
+					<div class="name">COSDI</div>
+					<div class="description">cycling team</div>
+				</a>
+			</div>
+			<nav>
+				<ul>
+					<!-- <li><a href="#news">News</a></li> -->
+					<li><a href="#races">Races</a></li>
+					<li><a href="#team">Team</a></li>
+					<li><a href="#partners">Partners</a></li>
+					<li><a href="#connect">Connect</a></li>
+				</ul>
+			</nav>
+		</div>
 	</header>
 	
 	<section class="hero">
 		<div class="wrapper">
 			<div class="hero-text">
 				<h1>
-					<span data-aos="fade-right">
+					<span data-aos="fade-right" class="title-logos">
+						<img src="images/cosdi.webp" alt="" class="cosdi" />
+						<span class="x">X</span>
+						<img src="images/velolaw.png" alt="" class="velolaw" />
+						<!-- <strong>COSDI</strong>
 						<span>Center for</span>
 						<span>Oral Surgery</span>
-						<span>&amp; Dental Implants</span>
+						<span>&amp; Dental Implants</span> -->
 					</span>
-					<span class="orange" data-aos="fade-right" data-aos-delay="250">Cycling Team</span></h1>
+					<div class="cycling-team" data-aos="fade-right" data-aos-delay="250">
+						<span>Cycling Team</span>
+					</div>
+					</h1>
 				<div class="button-wrap">
 					<a class="button" data-aos="fade-up" data-aos-delay="350" href="#races">Schedule</a>
 					<a class="button" data-aos="fade-up" data-aos-delay="450" href="#team">Team</a>
 				</div>
 			</div>
-			<img data-aos="fade-left" src="images/jersey.png" alt="COSDI Jersey" />
+			<img data-aos="fade-left" src="images/jersey.png" alt="COSDI Jersey" class="jersey" />
 		</div>
 	</section>
 
@@ -165,30 +183,30 @@
 		</div>
 	</section>
 
-	<section id="sponsors">
+	<section id="partners">
 		<div class="wrapper">
-			<h2>Sponsors</h2>
-			<p>Thanks to each of our sponsors for support. If you're interested in partnering with us, please <a href="mailto:info@cosdiracing.com">send us an email</a>.</p>
+			<h2>Partners</h2>
+			<p>Thanks to each of our partners for support. If you're interested in partnering with us, please <a href="mailto:info@cosdiracing.com">send us an email</a>.</p>
 			<ul>
-				<li class="sponsor title">
+				<li class="partner title">
 					<a href="http://grandrapidsoralsurgery.com/"><img src="images/cosdi.png" alt="Grand Rapids Center for Oral Surgery and Dental Implants" /></a>
 				</li>
-				<li class="sponsor">
+				<li class="partner">
 					<a href="http://www.tmlablegal.com/"><img src="images/tl.png" width="125" alt="Trademark Lab" /></a>
 				</li>
-				<li class="sponsor">
+				<li class="partner">
 					<a href="https://www.freewheelerbikeshop.com/"><img src="images/freewheeler.gif" alt="Freewheeler Bike Shop" /></a>
 				</li>
-				<li class="sponsor">
+				<li class="partner">
 					<a href="https://theglutenfreebar.com/"><img src="images/gfb.png" alt="The Gluten Free Bar" /></a>
 				</li>
-				<li class="sponsor">
+				<li class="partner">
 					<a href="http://www.turnerind.com/"><img src="images/turnerind.jpg" alt="Turner Industries" /></a>
 				</li>
-				<li class="sponsor">
+				<li class="partner">
 					<a href="https://www.greatlakesoutpost.com/"><img src="images/glo.png" alt="Great Lakes Outpost" /></a>
 				</li>
-				<li class="sponsor">
+				<li class="partner">
 					<a href="https://feltbicycles.com/"><img src="images/felt.png" alt="Felt Bicycles" /></a>
 				</li>
 			</ul>
