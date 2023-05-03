@@ -592,6 +592,15 @@ footer img.cosdi {
 }
 
 @media only screen and (max-width: 600px) {
+	.photo-hero h1 .cycling-team:before {
+		right: -30px;
+	}
+
+	.photo-hero h1 .cycling-team span {
+		font-size: 25px;
+		letter-spacing: 3px;
+	}
+
 	#partners ul li.title img {
 		padding: 0 10px;
 	}
