@@ -57,7 +57,7 @@ header .wrapper {
 }
 
 .site-heading .name {
-	font-size: 27px;
+	font-size: 28px;
     letter-spacing: .7px;
 	line-height: 0.9;
 }
@@ -84,7 +84,7 @@ nav li a {
 	text-decoration: none;
 	color: #fff;
 	display: block;
-	padding: 20px;
+	padding: 17px;
 	transition: .15s ease color;
 }
 
@@ -643,7 +643,7 @@ footer img.cosdi {
 		display: block;
 		color: #fff;
 		padding: 20px 0;
-		font-weight: 800;
+		font-weight: 600;
 		cursor: pointer;
 		border: 0;
 		padding: 0;
