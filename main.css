@@ -339,6 +339,7 @@ img {
 
 #races table {
 	font-size: 15px;
+	border-collapse: collapse;
 }
 
 #schedule p {
