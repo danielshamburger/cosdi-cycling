@@ -1,26 +1,40 @@
-$(document).ready(function(){
-	
-	AOS.init();
-	
-	// http://stackoverflow.com/questions/7717527/jquery-smooth-scrolling-when-clicking-an-anchor-link/7717572#7717572?newreg=16ca424bc4024b21a4fcc728ea6451d5
-	$('a').click(function(){
-	    $('html, body').animate({
-	        scrollTop: $( $.attr(this, 'href') ).offset().top
-	    }, 500);
-	    return false;
-	});
+const hero = document.getElementById('hero');
+const header = document.getElementById('header');
 
-	var menuIsOpen = false;
+const menuToggle = document.getElementById('menu-toggle');
+const primaryNav = document.getElementById('primary-nav');
 
-	$('.menu-toggle').click(function() {
-		$('nav').slideToggle("fast");
-		if(!menuIsOpen) {
-			$('.menu-toggle').text("CLOSE");
-			menuIsOpen = true;
-		} else {
-			$('.menu-toggle').text("MENU");
-			menuIsOpen = false;
-		}
-	});
+const menuLinks = primaryNav.getElementsByTagName('a');
 
+const setHeader = () => {
+	const heroOutOfView = hero.getBoundingClientRect().bottom < header.offsetHeight;
+
+    if ( heroOutOfView && !hero.classList.contains('scrolled-header') ) {
+		header.classList.add('scrolled-header');
+    } else if (!heroOutOfView && header.classList.contains('scrolled-header')) {
+		header.classList.remove('scrolled-header');
+	}
+};
+
+// TODO: debounce this
+window.onscroll = () => {
+	setHeader();
+};
+
+window.onload = () => {
+	setHeader();
+};
+
+menuToggle.addEventListener('click', () => {
+	if ( header.classList.contains('menu-open') ) {
+		header.classList.remove('menu-open');
+	} else {
+		header.classList.add('menu-open');
+	}
 });
+
+for (var i = 0; i < menuLinks.length; i++) {
+	menuLinks[i].addEventListener('click', () => {
+		header.classList.remove('menu-open');
+	});
+};

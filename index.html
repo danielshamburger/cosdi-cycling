@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <!-- Website by Daniel Shamburger http://danielshamburger.com -->
 <html>
+
 <head>
-	<title>COSDI Racing - Grand Rapids, MI Cycling Team</title>
+	<title>COSDI / VeloLaw Cycling - Grand Rapids, MI Cycling Team</title>
 	<meta charset=utf-8>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="reset.css">
-	<link rel="stylesheet" type="text/css" href="main.css?ver=1.0.4">	
+	<link rel="stylesheet" type="text/css" href="main.css?ver=1.0.4">
 
 	<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
 	<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
@@ -17,7 +17,7 @@
 	<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
 	<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
 	<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
-	<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="192x192" href="android-icon-192x192.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
@@ -25,198 +25,421 @@
 	<meta name="msapplication-TileColor" content="#ffffff">
 	<meta name="msapplication-TileImage" content="ms-icon-144x144.png">
 	<meta name="theme-color" content="#ffffff">
-	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	<!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@300;500;900&family=PT+Sans:ital@1&family=Titillium+Web:ital,wght@1,600&display=swap"
+		rel="stylesheet">
 </head>
+
 <body>
-<main class="page-content">
-	<header>
-		<!-- <img src="images/logo_white.png" width="75" alt="" /> -->
-		<div class="menu-toggle">MENU</div>
-		<nav>
-			<ul class="wrapper">
-				<!-- <li><a href="#news">News</a></li> -->
-				<li><a href="#races">Races</a></li>
-				<li><a href="#team">Team</a></li>
-				<li><a href="#sponsors">Sponsors</a></li>
-				<li><a href="#connect">Connect</a></li>
-			</ul>
-		</nav>
-	</header>
-	
-	<section class="hero">
-		<div class="wrapper">
-			<div class="hero-text">
-				<h1>
-					<span data-aos="fade-right">
-						<span>Center for</span>
-						<span>Oral Surgery</span>
-						<span>&amp; Dental Implants</span>
-					</span>
-					<span class="orange" data-aos="fade-right" data-aos-delay="250">Cycling Team</span></h1>
-				<div class="button-wrap">
-					<a class="button" data-aos="fade-up" data-aos-delay="350" href="#races">Schedule</a>
-					<a class="button" data-aos="fade-up" data-aos-delay="450" href="#team">Team</a>
+	<main class="page-content">
+		<header id="header">
+			<div class="wrapper">
+				<div class="mobile-wrap">
+					<div class="site-heading">
+						<a href="#">
+							<div class="name">COSDI</div>
+							<div class="description">cycling team</div>
+						</a>
+					</div>
+					<button id="menu-toggle">MENU</button>
+				</div>
+				<nav id="primary-nav">
+					<ul>
+						<li><a href="#races">Races</a></li>
+						<li><a href="#team">Team</a></li>
+						<li><a href="#partners">Partners</a></li>
+						<li><a href="#connect">Connect</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+		<section class="photo-hero" id="hero">
+			<div class="wrapper">
+				<div class="hero-content">
+					<h1>
+						<span class="title-logos">
+							<a target="_blank" href="https://www.grandrapidsoralsurgery.com/">
+								<img src="images/cosdi.webp" alt="Center for Oral Surgery & Dental Implants" class="cosdi" />
+							</a>
+							<!-- <span class="x">-</span> -->
+							<a target="_blank" href="https://velo.law/">
+								<img src="images/velolaw.png" alt="Velo Law" class="velolaw" />
+							</a>
+						</span>
+						<div class="cycling-team">
+							<span>Cycling Team</span>
+						</div>
+					</h1>
+					<div class="button-wrap">
+						<a class="button" href="#races">Race Schedule</a>
+						<a class="button" href="#team">Team Roster</a>
+					</div>
 				</div>
 			</div>
-			<img data-aos="fade-left" src="images/jersey.png" alt="COSDI Jersey" />
-		</div>
-	</section>
+		</section>
 
-	<section id="races">
-		<div class="wrapper">
-			<h2>2019 Race Schedule</h2>
-			<table>
-				<tr>
-					<th>Date</th><th>Event</th><th>Location</th>
-				</tr>
-				<tr data-aos="fade-in">
-					<td>March 23</td><td>Melting Mann Dirt Road Bike Challenge</td><td>Vandalia, MI</td>
-				</tr>
-				<tr data-aos="fade-in">
-					<td>April 13</td><td>Barry Roubaix</td><td>Hastings, MI</td>
-				</tr>
-				<tr data-aos="fade-in" data-aos-delay="100">
-					<td>May 18-19</td><td>Weekend at White Lake Stage Race</td><td>Whitehall, MI</td>
-				</tr>
-				<tr data-aos="fade-in">
-					<td>June 1</td><td>Waterford Hills Crit</td><td>Waterford, MI</td>
-				</tr>
-				<tr data-aos="fade-in" data-aos-delay="100">
-					<td>June 14</td><td>Zeeland Criterium</td><td>Zeeland, MI</td>
-				</tr>
-				<tr data-aos="fade-in" data-aos-delay="100">
-					<td>June 15</td><td>Ada Criterium</td><td>Ada, MI</td>
-				</tr>
-				<tr data-aos="fade-in" data-aos-delay="100">
-					<td>June 20-30</td><td>Tour of America's Dairyland</td><td>Southeast, WI</td>
-				</tr>
-				<tr data-aos="fade-in" data-aos-delay="100">
-					<td>June 29</td><td>Port City Crit</td><td>Muskegon, MI</td>
-				</tr>
-				<tr data-aos="fade-in" data-aos-delay="100">
-					<td>July 13</td><td>Detroit Cycling Championship</td><td>Detroit, MI</td>
-				</tr>
-				<tr data-aos="fade-in" data-aos-delay="100">
-					<td>July 14</td><td>Corktown Criterium</td><td>Detroit, MI</td>
-				</tr>
-				<tr data-aos="fade-in" data-aos-delay="100">
-					<td>July 19-28</td><td>Intelligentsia Cup</td><td>Chicago, IL</td>
-				</tr>
-				<tr data-aos="fade-in" data-aos-delay="100">
-					<td>TBD</td><td>Fox Subaru Gaslight Criterium</td><td>East Grand Rapids, MI</td>
-				</tr>
-				<tr data-aos="fade-in" data-aos-delay="100">
-					<td>TBD</td><td>Debaets-Devos Pro-Am</td><td>Auburn Hills, MI</td>
-				</tr>
-			</table>
-		</div>
-	</section>
+		<section class="intro">
+			<div class="wrapper">
+				<h2>COSDI / Velo.Law Cycling Team</h2>
+				<p>Grand Rapids, MI based cycling team racing road, gravel and MTB around the midwest and sharing the
+					passion for the sport.</p>
+			</div>
+		</section>
 
-	<section id="team">
-		<div class="wrapper">
-			<h2>Team Roster</h2>
-			<ul>
-				<li class="rider">
-					<img src="images/blank-profile.jpg" alt="Profile Photo" />
-					<h3 class="rider-name">Jason Swiatlowski</h3>
-					<div class="category">Cat 1, Masters</div>
-				</li>
-				<li class="rider">
-					<img src="images/blank-profile.jpg" alt="Profile Photo" />
-					<h3 class="rider-name">Reid Morris</h3>
-					<div class="category">Cat 2, Masters</div>
-				</li>
-				<li class="rider">
-					<img src="images/blank-profile.jpg" alt="Profile Photo" />
-					<h3 class="rider-name">Dave Hietikko</h3>
-					<div class="category">Cat 2, Masters</div>
-				</li>
-				<li class="rider">
-					<img src="images/blank-profile.jpg" alt="Profile Photo" />
-					<h3 class="rider-name">Cameron Timmer</h3>
-					<div class="category">Cat 2</div>
-				</li>
-				<li class="rider">
-					<img src="images/blank-profile.jpg" alt="Profile Photo" />
-					<h3 class="rider-name">Dirk DeJonge</h3>
-					<div class="category">Cat 2</div>
-				</li>
-				<li class="rider">
-					<img src="images/blank-profile.jpg" alt="Profile Photo" />
-					<h3 class="rider-name">Daniel Shamburger</h3>
-					<div class="category">Cat 2</div>
-				</li>
-				<li class="rider">
-					<img src="images/blank-profile.jpg" alt="Profile Photo" />
-					<h3 class="rider-name">Andrew Guelzo</h3>
-					<div class="category">Cat 2</div>
-				</li>
-				<li class="rider">
-					<img src="images/blank-profile.jpg" alt="Profile Photo" />
-					<h3 class="rider-name">Andrew Koning</h3>
-					<div class="category">Cat 3</div>
-				</li>
-				<li class="rider">
-					<img src="images/blank-profile.jpg" alt="Profile Photo" />
-					<h3 class="rider-name">Scott Bridges</h3>
-					<div class="category">Cat 3</div>
-				</li>
-			</ul>
-		</div>
-	</section>
+		<section id="races">
+			<div class="wrapper">
+				<h2>2023 Race Schedule</h2>
+				<table>
+					<tr>
+						<th>Date</th>
+						<th>Event</th>
+						<th>Type</th>
+						<th>Location</th>
+					</tr>
+					<tr>
+						<td>April 15</td>
+						<td><a target="_blank" href="https://barry-roubaix.com/">Barry Roubaix</a></td>
+						<td>Gravel</td>
+						<td>Hastings, MI</td>
+					</tr>
+					<tr>
+						<td>Sundays, April - May<br />(Select dates)</td>
+						<td><a target="_blank" href="https://www.annarborveloclub.org/sts-home">AAVC Spring Training
+								Series</a></td>
+						<td>Road</td>
+						<td>Dexter, MI</td>
+					</tr>
+					<tr>
+						<td>April 29</td>
+						<td><a target="_blank" href="https://waterloogravel.com/">Waterloo G&G</a></td>
+						<td>Gravel</td>
+						<td>Waterloo, MI</td>
+					</tr>
+					<tr>
+						<td>Wednesdays, May - August</td>
+						<td><a target="_blank" href="https://www.facebook.com/grattanraceseries/">Grattan Race
+								Series</a></td>
+						<td>Road</td>
+						<td>Grattan, MI</td>
+					</tr>
+					<tr>
+						<td>May 19-21</td>
+						<td><a target="_blank"
+								href="https://kcvcycling.org/events/fat-skinny-tire-fest/?from=domain">Fat and Skinny
+								Tire Fest</a></td>
+						<td>Road</td>
+						<td>Winona Lake, IN</td>
+					</tr>
+					<tr>
+						<td>June 9</td>
+						<td><a target="_blank" href="http://www.zeelandcriterium.com/">Zeeland Crit</a></td>
+						<td>Road</td>
+						<td>Zeeland, MI</td>
+					</tr>
+					<tr>
+						<td>June 15-25<br />(Select dates)</td>
+						<td><a target="_blank" href="https://www.tourofamericasdairyland.com/">ToAD</a></td>
+						<td>Road</td>
+						<td>Milwauke, WI</td>
+					</tr>
+					<tr>
+						<td>July 21-30<br />(Select dates)</td>
+						<td><a target="_blank" href="https://intelligentsiacup.com/">Intelligentsia Cup</a></td>
+						<td>Road</td>
+						<td>Chicago, IL</td>
+					</tr>
+					<tr>
+						<td>August 12</td>
+						<td><a target="_blank" href="http://www.oretoshore.com/">Ore to Shore</a></td>
+						<td>Mountain</td>
+						<td>Marquette, MI</td>
+					</tr>
+					<tr>
+						<td>August 25</td>
+						<td><a target="_blank" href="https://www.momentumindy.org/mass-ave-crit/">Mass Ave Crit</a></td>
+						<td>Road</td>
+						<td>Indianapolis, IN</td>
+					</tr>
+					<tr>
+						<td>August 26</td>
+						<td><a target="_blank" href="https://www.momentumindy.org/indy-crit">Indy Crit</a></td>
+						<td>Road</td>
+						<td>Indianapolis, IN</td>
+					</tr>
+					<tr>
+						<td>August 27</td>
+						<td><a target="_blank"
+								href="https://cadieuxbicycleclub.com/race/debaets-devos-pro-am-bicycle-race/">Debaets-Devos
+								Criterium</a></td>
+						<td>Road</td>
+						<td>Auburn Hills, MI</td>
+					</tr>
+					<tr>
+						<td>October 21</td>
+						<td><a target="_blank" href="https://www.endomanpromotions.com/peak-2-peak">Peak to Peak</a></td>
+						<td>Mountain</td>
+						<td>Crystal Mountain, MI</td>
+					</tr>
+					<tr>
+						<td>October 28</td>
+						<td><a target="_blank" href="https://www.thelowell50.com/index.html">Lowell 50</a></td>
+						<td>Gravel</td>
+						<td>Lowell, MI</td>
+					</tr>
+					<tr>
+						<td>November 4</td>
+						<td><a target="_blank" href="https://www.iceman.com/">Iceman Cometh</a></td>
+						<td>Mountain</td>
+						<td>Traverse City, MI</td>
+					</tr>
 
-	<section id="sponsors">
-		<div class="wrapper">
-			<h2>Sponsors</h2>
-			<p>Thanks to each of our sponsors for support. If you're interested in partnering with us, please <a href="mailto:info@cosdiracing.com">send us an email</a>.</p>
-			<ul>
-				<li class="sponsor title">
-					<a href="http://grandrapidsoralsurgery.com/"><img src="images/cosdi.png" alt="Grand Rapids Center for Oral Surgery and Dental Implants" /></a>
-				</li>
-				<li class="sponsor">
-					<a href="http://www.tmlablegal.com/"><img src="images/tl.png" width="125" alt="Trademark Lab" /></a>
-				</li>
-				<li class="sponsor">
-					<a href="https://www.freewheelerbikeshop.com/"><img src="images/freewheeler.gif" alt="Freewheeler Bike Shop" /></a>
-				</li>
-				<li class="sponsor">
-					<a href="https://theglutenfreebar.com/"><img src="images/gfb.png" alt="The Gluten Free Bar" /></a>
-				</li>
-				<li class="sponsor">
-					<a href="http://www.turnerind.com/"><img src="images/turnerind.jpg" alt="Turner Industries" /></a>
-				</li>
-				<li class="sponsor">
-					<a href="https://www.greatlakesoutpost.com/"><img src="images/glo.png" alt="Great Lakes Outpost" /></a>
-				</li>
-				<li class="sponsor">
-					<a href="https://feltbicycles.com/"><img src="images/felt.png" alt="Felt Bicycles" /></a>
-				</li>
-			</ul>
-		</div>
-	</section>
+				</table>
+			</div>
+			<iframe width="100%" class="race-map"
+				src="https://calvin.maps.arcgis.com/apps/MapJournal/index.html?appid=52bcd24855b64c36a3e9c33c1b985764" ;
+				frameborder="0" scrolling="no"></iframe>
+		</section>
 
-	<section id="connect">
-		<div class="wrapper">
-			<h2>Connect</h2>
-			<p>Follow us on <a target="_blank" href="https://www.facebook.com/COSDIRacing/">social media</a> for updates throughout the season! If you'd like to get in touch personally, <a href="mailto:info@cosdiracing.com">shoot us an email</a>.</p>
-		</div>
-	</section>
+		<section id="team">
+			<div class="wrapper">
+				<h2>Team Roster</h2>
+				<ul>
+					<li class="rider">
+						<img src="images/cam.jpg" alt="Profile Photo" />
+						<div class="rider-name">
+						<h3>Cameron Timmer</h3>
+						<a class="strava-link" href="https://www.strava.com/athletes/13977">
+							<svg xmlns="http://www.w3.org/2000/svg"
+							aria-label="Strava" role="img"
+							viewBox="0 0 512 512"><rect
+							width="512" height="512"
+							rx="15%"
+							fill="#fc4c01"/><path fill="#ffffff" d="M120 288L232 56l112 232h-72l-40-96-40 96z"/><path fill="#fda580" d="M280 288l32 72 32-72h48l-80 168-80-168z"/></svg>
+						</a>
+						</div>
+						<!-- <div class="category">Category? Something clever?</div> -->
+					</li>
+					<li class="rider">
+						<img src="images/chris.jpg" alt="Profile Photo" />
+						<div class="rider-name">
+						<h3>Chris Boer</h3>
+						<a class="strava-link" href="https://www.strava.com/athletes/1052920">
+							<svg xmlns="http://www.w3.org/2000/svg"
+							aria-label="Strava" role="img"
+							viewBox="0 0 512 512"><rect
+							width="512" height="512"
+							rx="15%"
+							fill="#fc4c01"/><path fill="#ffffff" d="M120 288L232 56l112 232h-72l-40-96-40 96z"/><path fill="#fda580" d="M280 288l32 72 32-72h48l-80 168-80-168z"/></svg>
+						</a>
+						</div>
+						<!-- <div class="category">Category? Something clever?</div> -->
+					</li>
+					<li class="rider">
+						<img src="images/dan.jpg" alt="Profile Photo" />
+						<div class="rider-name">
+						<h3>Daniel Shamburger</h3>
+						<a class="strava-link" href="https://www.strava.com/athletes/2136969">
+							<svg xmlns="http://www.w3.org/2000/svg"
+							aria-label="Strava" role="img"
+							viewBox="0 0 512 512"><rect
+							width="512" height="512"
+							rx="15%"
+							fill="#fc4c01"/><path fill="#ffffff" d="M120 288L232 56l112 232h-72l-40-96-40 96z"/><path fill="#fda580" d="M280 288l32 72 32-72h48l-80 168-80-168z"/></svg>
+						</a>
+						</div>
+						<!-- <div class="category">Category? Something clever?</div> -->
+					</li>
+					<li class="rider">
+						<img src="images/dave.jpg" alt="Profile Photo" />
+						<div class="rider-name">
+						<h3>Dave Hietikko</h3>
+						<a class="strava-link" href="https://www.strava.com/athletes/44441321">
+							<svg xmlns="http://www.w3.org/2000/svg"
+							aria-label="Strava" role="img"
+							viewBox="0 0 512 512"><rect
+							width="512" height="512"
+							rx="15%"
+							fill="#fc4c01"/><path fill="#ffffff" d="M120 288L232 56l112 232h-72l-40-96-40 96z"/><path fill="#fda580" d="M280 288l32 72 32-72h48l-80 168-80-168z"/></svg>
+						</a>
+						</div>
+						<!-- <div class="category">Category? Something clever?</div> -->
+					</li>
+					<li class="rider">
+						<img src="images/gerrit.jpg" alt="Profile Photo" />
+						<div class="rider-name">
+						<h3>Gerrit Boer</h3>
+						<a class="strava-link" href="https://www.strava.com/athletes/45382029">
+							<svg xmlns="http://www.w3.org/2000/svg"
+							aria-label="Strava" role="img"
+							viewBox="0 0 512 512"><rect
+							width="512" height="512"
+							rx="15%"
+							fill="#fc4c01"/><path fill="#ffffff" d="M120 288L232 56l112 232h-72l-40-96-40 96z"/><path fill="#fda580" d="M280 288l32 72 32-72h48l-80 168-80-168z"/></svg>
+						</a>
+						</div>
+						<!-- <div class="category">Category? Something clever?</div> -->
+					</li>
+					<li class="rider">
+						<img src="images/jason.jpg" alt="Profile Photo" />
+						<div class="rider-name">
+						<h3>Jason Swiatlowski</h3>
+						<!-- <a class="strava-link" href="">
+							<svg xmlns="http://www.w3.org/2000/svg"
+							aria-label="Strava" role="img"
+							viewBox="0 0 512 512"><rect
+							width="512" height="512"
+							rx="15%"
+							fill="#fc4c01"/><path fill="#ffffff" d="M120 288L232 56l112 232h-72l-40-96-40 96z"/><path fill="#fda580" d="M280 288l32 72 32-72h48l-80 168-80-168z"/></svg>
+						</a> -->
+						</div>
+						<!-- <div class="category">Category? Something clever?</div> -->
+					</li>
+					<li class="rider">
+						<img src="images/joel.jpg" alt="Profile Photo" />
+						<div class="rider-name">
+						<h3>Joel Poliskey</h3>
+						<a class="strava-link" href="https://www.strava.com/athletes/12473609">
+							<svg xmlns="http://www.w3.org/2000/svg"
+							aria-label="Strava" role="img"
+							viewBox="0 0 512 512"><rect
+							width="512" height="512"
+							rx="15%"
+							fill="#fc4c01"/><path fill="#ffffff" d="M120 288L232 56l112 232h-72l-40-96-40 96z"/><path fill="#fda580" d="M280 288l32 72 32-72h48l-80 168-80-168z"/></svg>
+						</a>
+						</div>
+						<!-- <div class="category">Category? Something clever?</div> -->
+					</li>
+					<li class="rider">
+						<img src="images/kyle.jpg" alt="Profile Photo" />
+						<div class="rider-name">
+						<h3>Kyle Dankert</h3>
+						<a class="strava-link" href="https://www.strava.com/athletes/28906466">
+							<svg xmlns="http://www.w3.org/2000/svg"
+							aria-label="Strava" role="img"
+							viewBox="0 0 512 512"><rect
+							width="512" height="512"
+							rx="15%"
+							fill="#fc4c01"/><path fill="#ffffff" d="M120 288L232 56l112 232h-72l-40-96-40 96z"/><path fill="#fda580" d="M280 288l32 72 32-72h48l-80 168-80-168z"/></svg>
+						</a>
+						</div>
+						<!-- <div class="category">Category? Something clever?</div> -->
+					</li>
+					<li class="rider">
+						<img src="images/luke.jpg" alt="Profile Photo" />
+						<div class="rider-name">
+						<h3>Luke Mullis</h3>
+						<a class="strava-link" href="https://www.strava.com/athletes/2903589">
+							<svg xmlns="http://www.w3.org/2000/svg"
+							aria-label="Strava" role="img"
+							viewBox="0 0 512 512"><rect
+							width="512" height="512"
+							rx="15%"
+							fill="#fc4c01"/><path fill="#ffffff" d="M120 288L232 56l112 232h-72l-40-96-40 96z"/><path fill="#fda580" d="M280 288l32 72 32-72h48l-80 168-80-168z"/></svg>
+						</a>
+						</div>
+						<!-- <div class="category">Category? Something clever?</div> -->
+					</li>
+					<li class="rider">
+						<img src="images/noah.jpg" alt="Profile Photo" />
+						<div class="rider-name">
+						<h3>Noah Prefontaine</h3>
+						<a class="strava-link" href="https://www.strava.com/athletes/8742884">
+							<svg xmlns="http://www.w3.org/2000/svg"
+							aria-label="Strava" role="img"
+							viewBox="0 0 512 512"><rect
+							width="512" height="512"
+							rx="15%"
+							fill="#fc4c01"/><path fill="#ffffff" d="M120 288L232 56l112 232h-72l-40-96-40 96z"/><path fill="#fda580" d="M280 288l32 72 32-72h48l-80 168-80-168z"/></svg>
+						</a>
+						</div>
+						<!-- <div class="category">Category? Something clever?</div> -->
+					</li>
+					<li class="rider">
+						<img src="images/reid.jpg" alt="Profile Photo" />
+						<div class="rider-name">
+						<h3>Reid Morris</h3>
+						<a class="strava-link" href="https://www.strava.com/athletes/1094536">
+							<svg xmlns="http://www.w3.org/2000/svg"
+							aria-label="Strava" role="img"
+							viewBox="0 0 512 512"><rect
+							width="512" height="512"
+							rx="15%"
+							fill="#fc4c01"/><path fill="#ffffff" d="M120 288L232 56l112 232h-72l-40-96-40 96z"/><path fill="#fda580" d="M280 288l32 72 32-72h48l-80 168-80-168z"/></svg>
+						</a>
+						</div>
+						<!-- <div class="category">Category? Something clever?</div> -->
+					</li>
+				</ul>
+			</div>
+		</section>
 
-	<footer>
-		<div class="wrapper">
-			<p>
-				<span>&copy; 2019 COSDI Racing</span> 
-				<span class="middot">&middot;</span> 
-				<a href="mailto:info@cosdiracing.com">Contact</a>
-				<span class="middot">&middot;</span> 
-				<span>Built by <a href="http://danielshamburger.com/">Daniel Shamburger</a></span> 
-				<span class="middot">&middot;</span> 
-				<span>Hosted on GitHub Pages</span></p>
-		</div>
-	</footer>
-</main>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script src="main.js?ver=1.0.4"></script>
+		<section id="partners">
+			<div class="wrapper">
+				<h2>Partners</h2>
+				<ul>
+					<li class="partner title">
+						<a target="_blank" href="http://grandrapidsoralsurgery.com/"><img src="images/cosdi.png"
+								alt="Grand Rapids Center for Oral Surgery and Dental Implants" /></a>
+					</li>
+					<li class="partner title">
+						<a target="_blank" href="http://velo.law/"><img src="images/velolaw.png" alt="Velo Law" /></a>
+					</li>
+					<li class="partner">
+						<a target="_blank" href="https://theglutenfreebar.com/"><img src="images/gfb.png"
+								alt="The Gluten Free Bar" /></a>
+					</li>
+					<li class="partner">
+						<a target="_blank" href="http://www.tmlablegal.com/"><img src="images/tl.png" width="125"
+								alt="Trademark Lab" /></a>
+					</li>
+					<li class="partner">
+						<a target="_blank" href="https://www.freewheelerbikeshop.com/"><img src="images/freewheeler.gif"
+								alt="Freewheeler Bike Shop" /></a>
+					</li>
+					<li class="partner">
+						<a target="_blank" href="https://www.reboot-bev.com/"><img src="images/mt-pleasant.png"
+								alt="Mt. Pleasant Club Whiskey " /></a>
+					</li>
+					<li class="partner">
+						<a target="_blank" href="http://www.turnerind.com/"><img src="images/turnerind.jpg"
+								alt="Turner Industries" /></a>
+					</li>
+				</ul>
+			</div>
+		</section>
+		<section id="connect">
+			<div class="wrapper">
+				<h2>Connect</h2>
+				<p>Come along for the ride on <a href="https://www.instagram.com/cosdi_velolaw_cycling/">Instagram</a>, <a href="https://www.facebook.com/COSDIRacing/">Facebook</a>, <a href="">Strava</a>, or reach out to us directly via <a
+						href="mailto:info@cosdiracing.com">email</a>.</p>
+				<div class="instagram-embed">
+					<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/cosdi_velolaw_cycling/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/cosdi_velolaw_cycling/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this profile on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/cosdi_velolaw_cycling/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px;" target="_blank">COSDI / Velo.law Cycling 🚲</a> (@<a href="https://www.instagram.com/cosdi_velolaw_cycling/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px;" target="_blank">cosdi_velolaw_cycling</a>) • Instagram photos and videos</p></div></blockquote> <script async src="//www.instagram.com/embed.js"></script>
+				</div>
+			</div>
+		</section>
+		<footer>
+			<div class="wrapper">
+				<h3>COSDI / Velo.Law Cycling</h3>
+			</div>
+			<div class="wrapper logos">
+				<a target="_blank" href="https://www.grandrapidsoralsurgery.com/">
+					<img src="images/wave-tooth.png" alt="Center for Oral Surgery & Dental Implants" class="cosdi" />
+				</a>
+				<a target="_blank" href="https://velo.law/">
+					<img src="images/velo-icon.png" alt="Velo Law" class="velolaw" />
+				</a>
+			</div>
+			<div class="wrapper">
+				<p>Design and Development: Daniel Shamburger, Kyle Dankert</p>
+				<p>Photography: <a href="https://www.prefontainephoto.com/">Noah Prefontaine</a></p>
+			</div>
+		</footer>
+	</main>
+	<script src="main.js?ver=1.0.4"></script>
 </body>
+
 </html>
