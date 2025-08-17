@@ -242,9 +242,11 @@ h2 {
 	font-size: 40px;
 }
 
-.photo-hero .velolaw {
+.photo-hero .gaoc {
 	-webkit-filter: brightness(0%) invert(100%);
     filter: brightness(0%) invert(100%);
+	/* padding: 0 30px; */
+	max-width: 160px;
 }
 
 .hero .jersey {
