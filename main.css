@@ -1,44 +1,89 @@
+/* ============================================================
+   COSDI / GAOC Cycling — main.css
+   Refresh + design lift (2026). Brand: navy / orange / cyan.
+   ============================================================ */
+
+:root {
+	--navy: #041D41;
+	--navy-2: #022f5f;
+	--ink: #0b1b34;
+	--orange: #FF6A00;
+	--orange-2: #F97D3E;
+	--cyan: #02B8D9;
+	--paper: #F7F8FA;
+	--line: #e6e9ef;
+}
+
+* { box-sizing: border-box; }
+
 html {
 	font-family: 'Inter', sans-serif;
 	padding: 0;
+	overflow-x: hidden;
+	scroll-behavior: smooth;
+	scroll-padding-top: 70px;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
 }
 
 body {
 	margin: 0;
-	background: #041D41;
-	color: #022f5f;
+	background: var(--navy);
+	color: var(--ink);
+	overflow-x: hidden;
 }
 
+a { color: var(--navy); }
+
+img { max-width: 100%; }
+
+/* visible keyboard focus */
+a:focus-visible,
+button:focus-visible {
+	outline: 3px solid var(--cyan);
+	outline-offset: 2px;
+	border-radius: 4px;
+}
+
+/* respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+	html { scroll-behavior: auto; }
+	*, *::before, *::after {
+		transition-duration: 0.001ms !important;
+		animation-duration: 0.001ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+/* ----------------------------------------------------------------
+   Header / nav
+   ---------------------------------------------------------------- */
 header {
-	/* background: #9DD9D2; */
-	background: #041D41;
 	text-align: center;
 	position: fixed;
-	top: 0;
-	right: 0;
-	left: 0;
+	top: 0; right: 0; left: 0;
 	z-index: 100;
-	padding: 3px 0;
-	background: linear-gradient(180deg, rgb(79 79 79) 0%, rgba(4,29,65,0) 100%);
-	transition: background .4s;
-}
-
-a {
-	color: #041D41;
+	padding: 6px 0;
+	background: linear-gradient(180deg, rgba(2,17,38,0.78) 0%, rgba(2,17,38,0) 100%);
+	transition: background .35s ease, box-shadow .35s ease, padding .35s ease;
 }
 
 header.scrolled-header {
-	background: #022f5f;
+	background:
+		linear-gradient(rgba(4,29,65,0.88), rgba(4,29,65,0.88)),
+		url('images/kit-texture.png');
+	background-size: cover, cover;
+	background-position: center, center;
+	-webkit-backdrop-filter: saturate(140%) blur(10px);
+	backdrop-filter: saturate(140%) blur(10px);
+	box-shadow: 0 1px 0 rgba(255,255,255,0.06), 0 10px 30px rgba(0,0,0,0.25);
+	padding: 2px 0;
 }
 
 header .wrapper {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-}
-
-#menu-toggle {
-	display: none;
 }
 
 .site-heading {
@@ -50,384 +95,615 @@ header .wrapper {
 }
 
 .site-heading a {
-	display: block;
-	transform: rotate(-2.5deg);
+	display: inline-flex;
+	align-items: center;
+	gap: 9px;
 	color: #fff;
 	text-decoration: none;
+}
+
+.site-heading .site-mark {
+	height: 32px;
+	width: auto;
+	display: block;
 }
 
 .site-heading .name {
 	font-size: 28px;
-    letter-spacing: .7px;
+	letter-spacing: .7px;
 	line-height: 0.9;
+	transform: rotate(-2.5deg);
 }
 
-.site-heading .description {
-	font-size: 14px;
-}
+.site-heading .description { font-size: 14px; }
 
-header nav {
-	flex-grow: 3;
-	text-align: right;
-}
-
-header nav ul {
-	margin: 0;
-	padding: 0;
-}
-
-nav li {
-	display: inline-block;
-}
+header nav { flex-grow: 3; text-align: right; }
+header nav ul { margin: 0; padding: 0; }
+nav li { display: inline-block; }
 
 nav li a {
+	position: relative;
 	text-decoration: none;
 	color: #fff;
 	display: block;
-	padding: 17px;
-	transition: .15s ease color;
+	padding: 16px 14px;
+	font-size: 15px;
+	font-weight: 500;
+	letter-spacing: .3px;
+	transition: color .15s ease;
 }
 
-nav li a:hover {
-
+nav li a::after {
+	content: '';
+	position: absolute;
+	left: 14px; right: 14px;
+	bottom: 9px;
+	height: 2px;
+	background: var(--orange);
+	transform: scaleX(0);
+	transform-origin: left;
+	transition: transform .2s ease;
 }
+
+nav li a:hover::after { transform: scaleX(1); }
+
+#menu-toggle { display: none; }
 
 .wrapper {
 	width: 90%;
-	max-width: 1100px;
+	max-width: 1120px;
 	margin: 0 auto;
 }
 
+/* ----------------------------------------------------------------
+   Buttons
+   ---------------------------------------------------------------- */
 .button {
 	text-decoration: none;
-	opacity: 1;
-	transition: .2s ease background-color;
-	border-radius: 21px;
-	font-size: 15px;
+	transition: transform .15s ease, background-color .2s ease, box-shadow .2s ease;
+	border-radius: 40px;
+	font-size: 14px;
 	text-transform: uppercase;
-	/* font-weight: 600; */
 	letter-spacing: 1.5px;
-	/* background-color: #114B5F; */
-	background: #041D41;
-	border: 0;
+	font-weight: 600;
+	background: var(--orange);
+	border: 2px solid var(--orange);
 	color: #fff;
-	padding: 12px 20px;
+	padding: 14px 26px;
 	display: inline-block;
 	text-align: center;
-	min-width: 120px;
+	min-width: 130px;
 }
 
 .button:hover {
-	/* background-color: #25677d; */
+	background: #ff7d1f;
+	border-color: #ff7d1f;
+	transform: translateY(-2px);
+	box-shadow: 0 10px 24px rgba(255,106,0,0.35);
 }
 
+/* ----------------------------------------------------------------
+   Headings
+   ---------------------------------------------------------------- */
 h1 {
-	color: #FF6A00;
-	font-weight: 800;
+	color: var(--orange);
+	font-weight: 900;
 	font-size: 53px;
-}
-
-h1:nth-child(2) {
-	color: #fff;
+	letter-spacing: -1px;
 }
 
 h2 {
-	font-weight: 800;
-	font-size: 47px;
+	font-weight: 900;
+	font-size: 44px;
+	letter-spacing: -1px;
 	text-align: center;
-	margin-bottom: 30px;
+	margin: 0 0 14px;
+	line-height: 1.05;
 }
 
-.hero {
-	/*background: #77C5BA;*/
-	/* background: rgb(116, 190, 174); */
-	/* background: radial-gradient(circle, rgba(116, 190, 174, 1) 0%, rgba(39, 163, 160, 1) 100%); */
-	background: #0179A5;
+/* shared section eyebrow accent under section titles */
+section > .wrapper > h2 + .section-rule,
+.section-title-accent {
+	display: block;
+	width: 56px;
+	height: 4px;
+	border-radius: 2px;
+	background: var(--orange);
+	margin: 0 auto 38px;
 }
 
-.hero .wrapper {
-	position: relative;
-	padding: 150px 0;
-}
-
+/* ----------------------------------------------------------------
+   Hero
+   ---------------------------------------------------------------- */
 .photo-hero {
 	position: relative;
+	width: 100%;
+	min-height: 100vh;
+	min-height: 100svh;
+	background-color: var(--navy);
+	background-image: url('images/hero-grs.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	display: flex;
 }
 
 .photo-hero:before {
 	content: '';
 	position: absolute;
+	inset: 0;
 	z-index: 0;
-	left: 0;
-	bottom: 0;
-	top: 0;
-	right: 0;
-	background: linear-gradient(90deg, rgba(0,0,0,0.52) 0%, rgba(4,26,57,0) 52%, rgba(4,29,65,0) 100%);
+	background:
+		linear-gradient(270deg, rgba(2,17,38,0.55) 0%, rgba(2,17,38,0.22) 42%, rgba(2,17,38,0) 64%),
+		linear-gradient(to top, rgba(2,17,38,0.88) 0%, rgba(2,17,38,0.28) 46%, rgba(2,17,38,0.16) 74%, rgba(2,17,38,0.44) 100%);
 }
 
+/* orange accent bar, bottom-right */
 .photo-hero:after {
 	content: '';
 	position: absolute;
-	z-index: 0;
-	bottom: -25px;
-    right: 0;
-    height: 80px;
-    width: 210px;
-	background: #F97D3E;
+	z-index: 1;
+	bottom: -22px;
+	left: 0;
+	height: 70px;
+	width: 220px;
+	background: var(--orange);
+}
+
+.photo-hero .wrapper {
+	position: relative;
+	z-index: 2;
+	height: auto;
+	width: 90%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: flex-end;
+	padding-bottom: 9vh;
 }
 
 .photo-hero .hero-content {
-	position: absolute;
-	bottom: 100px;
+	position: static;
+	max-width: 640px;
+	text-align: right;
 }
 
-.photo-hero p {
-	margin: 40px auto;
-	font-size: 20px;
-	display: block;
+.hero-eyebrow {
+	margin: 0 0 18px;
+	text-transform: uppercase;
+	letter-spacing: 3.5px;
+	font-size: 13px;
+	font-weight: 700;
+	color: var(--cyan);
 }
 
 .photo-hero h1 {
 	color: #fff;
 	font-weight: 500;
+	margin: 0;
 }
+
+.photo-hero .title-logos {
+	max-width: 300px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-end;
+	margin-left: auto;
+}
+
+.photo-hero .cosdi {
+	-webkit-filter: brightness(0%) invert(100%);
+	filter: brightness(0%) invert(100%);
+	margin-bottom: 22px;
+	max-width: 300px;
+}
+
+.photo-hero .gaoc {
+	-webkit-filter: brightness(0%) invert(100%);
+	filter: brightness(0%) invert(100%);
+	max-width: 190px;
+}
+
+.photo-hero .x { font-family: 'Instrument'; font-size: 40px; }
 
 .photo-hero h1 .cycling-team {
 	letter-spacing: .2px;
 	position: relative;
 	display: inline-block;
-	margin: 25px 0 0 0;
+	margin: 28px 0 0 0;
 }
 
 .photo-hero h1 .cycling-team span {
 	position: relative;
 	z-index: 1;
-	/* transform: rotate(-3deg); */
-	font-size: 40px;
+	font-size: 42px;
+	font-weight: 700;
 }
 
 .photo-hero h1 .cycling-team:before {
 	content: '';
 	display: block;
 	position: absolute;
-	top: -5px;
-    right: -80px;
-    bottom: -5px;
-    left: -500px;
-	background: #02B8D9;
+	top: -5px; left: -80px; bottom: -5px; right: -500px;
+	background: var(--cyan);
 	z-index: 0;
 }
 
-.photo-hero h1 span {
-	display: block;
+.photo-hero h1 span { display: block; }
+
+.photo-hero .button-wrap { margin-top: 40px; }
+.photo-hero .button { min-width: 150px; }
+
+/* second hero button = ghost */
+.photo-hero .button:nth-child(2) {
+	margin-left: 12px;
+	background: transparent;
+	border-color: var(--cyan);
+	color: #fff;
 }
 
-.photo-hero .title-logos {
-	max-width: 260px;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-
+.photo-hero .button:nth-child(2):hover {
+	background: var(--cyan);
+	border-color: var(--cyan);
+	color: var(--navy);
+	box-shadow: 0 10px 24px rgba(2,184,217,0.35);
 }
 
-.photo-hero .cosdi {
-	-webkit-filter: brightness(0%) invert(100%);
-    filter: brightness(0%) invert(100%);
-	margin-bottom: 20px;
-}
-
-.photo-hero .x {
-	font-family: 'Instrument';
-	font-size: 40px;
-}
-
+/* ----------------------------------------------------------------
+   Intro
+   ---------------------------------------------------------------- */
+/* legibility helpers over the color hero photo */
+.photo-hero .cosdi,
 .photo-hero .gaoc {
-	-webkit-filter: brightness(0%) invert(100%);
-    filter: brightness(0%) invert(100%);
-	/* padding: 0 30px; */
-	max-width: 160px;
+	filter: brightness(0) invert(1) drop-shadow(0 3px 10px rgba(0,0,0,0.5));
+	-webkit-filter: brightness(0) invert(1) drop-shadow(0 3px 10px rgba(0,0,0,0.5));
 }
+.hero-eyebrow { text-shadow: 0 1px 8px rgba(2,17,38,0.65); }
+header:not(.scrolled-header) nav li a,
+header:not(.scrolled-header) .site-heading .name { text-shadow: 0 1px 6px rgba(2,17,38,0.6); }
 
-.hero .jersey {
-	position: absolute;
-	right: 0;
-	bottom: -80px;
-	display: block;
-	max-width: 480px;
+.hero-credit {
+	margin: 22px 0 0;
+	font-size: 12px;
+	letter-spacing: .5px;
+	color: rgba(255,255,255,0.72);
+	text-shadow: 0 1px 6px rgba(2,17,38,0.6);
 }
-
-.hero .button-wrap {
-	margin-top: 30px;
-}
-
-.photo-hero {
-	background-image: url('images/zeeland/hero-bg.jpg');
-	background-size: 100%;
-	background-repeat: no-repeat;
-	background-position: center center;
-	width: 100%;
-	aspect-ratio: 16 / 9;
-}
-
-.photo-hero .wrapper {
-	position: relative;
-	height: 100%;
-}
+.hero-credit a { color: #fff; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.45); }
+.hero-credit a:hover { border-color: #fff; }
 
 .intro {
-	/* background: #0179A6; */
-	padding: 30px 0 70px;
-	/* color: #fff; */
+	padding: 90px 0 80px;
 	text-align: center;
-	background: #F7F8FA;
-    color: #041D41;
+	background: var(--paper);
+	color: var(--navy);
 }
+
+.intro h2 { font-size: 30px; line-height: 1.15; }
 
 .intro p {
+	max-width: 640px;
+	margin: 22px auto 0;
+	font-size: 19px;
+	color: #46566f;
+}
+
+.intro .intro-smile {
+	width: 78px;
+	height: auto;
+	display: block;
+	margin: 0 auto 22px;
+	opacity: .9;
+}
+
+/* ----------------------------------------------------------------
+   In memory of Bryce — season tribute (kept quiet + dignified)
+   ---------------------------------------------------------------- */
+#bryce {
+	background:
+		linear-gradient(rgba(4,29,65,0.9), rgba(4,29,65,0.9)),
+		url('images/kit-texture.png');
+	background-size: cover, cover;
+	background-position: center, center;
+	text-align: center;
+	padding: 78px 0;
+}
+
+#bryce .bryce-accent {
+	display: block;
+	width: 36px;
+	height: 2px;
+	background: var(--orange);
+	opacity: .85;
+	margin: 0 auto 24px;
+}
+
+#bryce .bryce-eyebrow {
+	display: block;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	font-size: 12px;
+	font-weight: 700;
+	color: #7f8ca0;
+	margin-bottom: 26px;
+}
+
+#bryce .bryce-mark {
+	display: block;
+	width: 60%;
+	max-width: 300px;
+	margin: 0 auto 22px;
+	opacity: .92;
+}
+
+#bryce p {
+	margin: 0 auto;
 	max-width: 600px;
-	margin: 0 auto;
+	color: #aeb8c6;
+	font-size: 15px;
+	letter-spacing: .2px;
 }
 
-.photo-hero .button-wrap {
-}
-
-.photo-hero .button {
-	min-width: 140px;
-}
-
-.photo-hero .button:nth-child(2) {
-	margin-left: 10px;
-}
-
-table {
-	text-align: left;
-	font-size: 18px;
-	margin: 50px auto;
-	line-height: 1.3;
-}
-
-th {
-	font-weight: 800;
-	padding: 10px 30px;
-}
-
-td {
-	padding: 10px 30px;
-}
-
-tr {
-	background: #F7F8FA;
-}
-
-tr:nth-child(2n) {
-	background: #fff;
-}
-
-p {
-	line-height: 1.7;
-	margin: 0 auto;
-	max-width: 800px
-}
-
-img {
-	max-width: 100%;
-}
-
+/* ----------------------------------------------------------------
+   Races
+   ---------------------------------------------------------------- */
 #races {
 	background: #fff;
-	padding: 50px 0 0 0;
+	padding: 100px 0;
 }
 
 #races table {
-	font-size: 15px;
+	width: 100%;
+	max-width: 920px;
+	font-size: 16px;
 	border-collapse: collapse;
+	margin: 0 auto;
+	line-height: 1.35;
 }
 
-#schedule p {
-	text-align: center;
+#races th {
+	font-weight: 800;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 12px;
+	color: #5b6b80;
+	text-align: left;
+	padding: 0 22px 14px;
+	border-bottom: 2px solid var(--cyan);
 }
 
+#races td {
+	padding: 16px 22px;
+	border-bottom: 1px solid var(--line);
+	vertical-align: top;
+}
+
+#races tr { background: transparent; }
+#races tbody tr:hover td,
+#races tr:hover td { background: var(--paper); }
+
+#races td:nth-child(2) { font-weight: 600; }
+#races td a { color: var(--navy); text-decoration: none; border-bottom: 1px solid rgba(4,29,65,0.25); }
+#races td a:hover { color: var(--orange); border-color: var(--orange); }
+
+/* race type accent (3rd column) */
+#races td:nth-child(3) {
+	text-transform: uppercase;
+	letter-spacing: .6px;
+	font-size: 12px;
+	font-weight: 700;
+	color: #C2410C;
+}
+
+#races td:nth-child(4) { color: #46566f; }
+
+#schedule p { text-align: center; }
+
+/* Featured "home race" callout */
+.home-race {
+	display: block;
+	text-align: left;
+	text-decoration: none;
+	background: var(--navy);
+	color: #fff;
+	border: 1px solid rgba(255,255,255,0.08);
+	border-radius: 18px;
+	padding: 38px 42px;
+	max-width: 920px;
+	margin: 0 auto 46px;
+	position: relative;
+	overflow: hidden;
+	transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.home-race:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 22px 50px rgba(4,29,65,0.28);
+}
+
+.home-race::before {
+	content: '';
+	position: absolute;
+	right: -50px;
+	top: -50px;
+	width: 200px;
+	height: 200px;
+	background: radial-gradient(circle, rgba(255,106,0,0.30), rgba(255,106,0,0) 70%);
+	pointer-events: none;
+}
+
+.home-race-eyebrow {
+	display: inline-block;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	font-size: 12px;
+	font-weight: 700;
+	color: var(--orange);
+}
+
+.home-race-title {
+	font-size: 34px;
+	font-weight: 900;
+	letter-spacing: -1px;
+	margin: 12px 0 8px;
+	color: #fff;
+	line-height: 1.02;
+}
+
+.home-race-meta {
+	color: #cdd7e6;
+	font-size: 15px;
+	font-weight: 600;
+	margin: 0 0 12px;
+	max-width: 600px;
+}
+
+.home-race-tag {
+	color: #aeb8c6;
+	font-size: 16px;
+	margin: 0 0 22px;
+	max-width: 560px;
+}
+
+.home-race-cta {
+	display: inline-block;
+	background: var(--orange);
+	color: #fff;
+	font-weight: 700;
+	font-size: 13px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	padding: 13px 24px;
+	border-radius: 40px;
+}
+
+.home-race:hover .home-race-cta { background: #ff7d1f; }
+
+/* Highlighted home-race row in the schedule */
+#races tr.home-row td {
+	background: #fff7f1;
+	box-shadow: inset 3px 0 0 var(--orange);
+}
+#races tr.home-row:hover td { background: #fff1e6; }
+#races tr.home-row td:nth-child(2) { font-weight: 800; }
+
+.home-tag {
+	display: inline-block;
+	margin-left: 8px;
+	background: #C2410C;
+	color: #fff;
+	font-size: 10px;
+	font-weight: 800;
+	letter-spacing: .6px;
+	text-transform: uppercase;
+	padding: 2px 8px;
+	border-radius: 20px;
+	vertical-align: middle;
+	white-space: nowrap;
+}
+
+/* ----------------------------------------------------------------
+   Team
+   ---------------------------------------------------------------- */
 #team {
-	background: #F7F8FA;
-	padding: 60px 0;
+	background: var(--paper);
+	padding: 100px 0;
 }
 
-#team p {
-	text-align: center;
-}
+#team p { text-align: center; }
 
 #team ul {
-	margin: 50px 0 0 0;
-	list-style: none;
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
-	grid-gap: 50px;
-	margin-block-start: 0;
-    margin-block-end: 0;
-    padding-inline-start: 0;
-}
-
-#team .strava-link {
-	text-align: right;
-}
-
-#team .strava-link svg {
-	width: 20px;
-	height: 20px;
-}
-
-#team .rider {
-}
-
-#team .rider-name {
-	display: block;
-	margin: 7px 0 5px;
-	display: flex;
-	justify-content: space-between;
-	align-items: baseline;
-}
-
-#team .rider-name h3 {
-	font-size: 20px;
-	margin: 0;
-	font-weight: 500;
-}
-
-#team .category {
-	font-style: italic;
-	color: #777;
-	font-size: 15px;
-}
-
-#partners {
-	background: #fff;
-	padding: 100px 0;
-	text-align: center;
-}
-
-#partners p {
-	margin-bottom: 50px;
-}
-
-#partners ul {
-	display: flex;
-	justify-content: space-between;
-	flex-wrap: wrap;
-	margin-top: 50px;
+	margin: 8px 0 0 0;
 	list-style: none;
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
-  	grid-gap: 30px;
+	grid-gap: 38px;
 	margin-block-start: 0;
 	margin-block-end: 0;
 	padding-inline-start: 0;
 }
 
-#partners ul li:first-child,
-#partners ul li:nth-child(2) {
-	grid-column: span 2;
+#team .rider {
+	background: #fff;
+	border: 1px solid var(--line);
+	border-radius: 14px;
+	overflow: hidden;
+	transition: transform .2s ease, box-shadow .2s ease;
 }
+
+#team .rider:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 16px 36px rgba(4,29,65,0.12);
+	border-color: var(--cyan);
+}
+
+#team .rider img {
+	display: block;
+	width: 100%;
+	aspect-ratio: 1 / 1;
+	object-fit: cover;
+	object-position: center top;
+	/* B&W so the older team kit isn't the focus */
+	filter: grayscale(100%) contrast(1.04);
+}
+
+#team .rider-name {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 10px;
+	padding: 16px 18px;
+}
+
+#team .rider-name h3 {
+	font-size: 18px;
+	margin: 0;
+	font-weight: 700;
+	color: var(--navy);
+	letter-spacing: -.2px;
+}
+
+#team .strava-link { text-align: right; line-height: 0; flex-shrink: 0; }
+#team .strava-link svg { width: 22px; height: 22px; opacity: .9; transition: opacity .15s ease, transform .15s ease; }
+#team .strava-link:hover svg { opacity: 1; transform: scale(1.08); }
+
+#team .category { font-style: italic; color: #777; font-size: 15px; }
+
+/* ----------------------------------------------------------------
+   Partners
+   ---------------------------------------------------------------- */
+#partners {
+	background: #fff;
+	padding: 110px 0;
+	text-align: center;
+}
+
+#partners p { margin-bottom: 30px; }
+
+#partners ul {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	gap: 34px 46px;
+	margin: 56px 0 0;
+	margin-block-start: 0;
+	margin-block-end: 0;
+	padding-inline-start: 0;
+	list-style: none;
+}
+
+#partners ul li {
+	flex: 0 1 21%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 96px;
+}
+
+/* title sponsors get more room */
+#partners ul li.title { flex-basis: 36%; }
 
 #partners ul li a {
 	display: flex;
@@ -437,278 +713,258 @@ img {
 	height: 100%;
 }
 
-#partners ul li {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
 #partners ul li img {
 	max-width: 100%;
+	max-height: 84px;
+	width: auto;
+	filter: grayscale(100%);
+	opacity: .72;
+	transition: filter .25s ease, opacity .25s ease, transform .25s ease;
 }
 
+#partners ul li a:hover img {
+	filter: grayscale(0%);
+	opacity: 1;
+	transform: scale(1.03);
+}
 
+/* title sponsors stay full-color (they're paying for top billing) */
 #partners ul li.title img {
 	padding: 0 20px;
+	max-height: 110px;
+	filter: none;
+	opacity: 1;
 }
 
+/* GAOC mark is square, so give it more height to balance the wide COSDI logo */
+#partners ul li.title:nth-child(2) img {
+	max-height: 156px;
+}
+
+/* ----------------------------------------------------------------
+   Connect
+   ---------------------------------------------------------------- */
 #connect {
-	padding: 60px 0;
-	background: #F7F8FA;
+	padding: 100px 0;
+	background: var(--paper);
 	text-align: center;
 }
+
+#connect p { font-size: 19px; color: #46566f; }
+#connect p a { color: var(--navy); font-weight: 600; text-decoration: none; border-bottom: 1px solid var(--orange); }
+#connect p a:hover { color: var(--orange); }
 
 #connect .instagram-embed {
 	margin: 40px auto 0;
+	max-width: 360px;
 }
 
-#connect .instagram-embed iframe {
-	margin-left: auto !important;
-	margin-right: auto !important;
+.ig-card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+	text-decoration: none;
+	background: #fff;
+	border: 1px solid var(--line);
+	border-radius: 16px;
+	padding: 34px 28px;
+	transition: transform .2s ease, box-shadow .2s ease;
 }
 
+.ig-card:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 16px 36px rgba(4,29,65,0.12);
+}
+
+.ig-glyph { color: #E1306C; display: block; }
+
+.ig-handle {
+	font-weight: 800;
+	font-size: 20px;
+	color: var(--navy);
+	letter-spacing: -.3px;
+}
+
+.ig-cta {
+	font-size: 13px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 1.2px;
+	color: #C2410C;
+}
+
+/* ----------------------------------------------------------------
+   Footer
+   ---------------------------------------------------------------- */
 footer {
 	text-align: center;
-	padding: 10px 0;
-	background: #041D41;
+	background:
+		linear-gradient(rgba(4,29,65,0.9), rgba(4,29,65,0.9)),
+		url('images/kit-texture.png');
+	background-size: cover, cover;
+	background-position: center, center;
 	color: #fff;
 	font-size: 12px;
-	padding: 50px 0;
+	padding: 70px 0 50px;
 }
 
 footer .logos {
-	margin-bottom: 70px;
+	margin-bottom: 60px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 50px;
+	flex-wrap: wrap;
 }
 
-footer .logos a {
-	text-decoration: none;
+footer .logos a { text-decoration: none; display: inline-flex; }
+
+.footer-smile {
+	display: block;
+	width: 84px;
+	height: auto;
+	margin: 0 auto 26px;
+	filter: brightness(0) invert(1);
+	-webkit-filter: brightness(0) invert(1);
+	opacity: .92;
 }
 
 footer h3 {
 	font-size: 22px;
-	margin-bottom: 40px;
+	margin-bottom: 36px;
+	letter-spacing: -.3px;
 }
 
-footer p {
-	color: #fff;
-	margin-bottom: 10px;
-}
+footer p { color: #fff; margin-bottom: 10px; }
+footer a { color: #fff; }
 
-footer a {
-	color: #fff;
+.footer-meta { margin-top: 6px; }
+.footer-social {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 8px 22px;
+	margin: 0 0 14px;
 }
+.footer-social a { color: #cdd7e6; text-decoration: none; font-size: 14px; font-weight: 600; }
+.footer-social a:hover { color: var(--cyan); }
+.footer-copy { color: #7f8ca0; font-size: 12px; margin: 0; }
 
-footer img {
-	max-width: 150px;
-	height: auto;
-}
+footer img { max-width: 150px; height: auto; }
 
 footer img.cosdi {
 	-webkit-filter: brightness(0%) invert(100%);
-    filter: brightness(0%) invert(100%);
+	filter: brightness(0%) invert(100%);
 }
 
-.race-map {
-	height: 800px;
-}
+/* ----------------------------------------------------------------
+   (legacy) plain hero / race map helpers — retained
+   ---------------------------------------------------------------- */
+.hero { background: #0179A5; }
+.hero .wrapper { position: relative; padding: 150px 0; }
+.hero .button-wrap { margin-top: 30px; }
 
-@media only screen and (max-height: 900px) {
-	.race-map {
-		height: 600px;
-	}
-}
+.race-map { height: 800px; }
+@media only screen and (max-height: 900px) { .race-map { height: 600px; } }
+@media only screen and (max-height: 800px) { .race-map { height: 550px; } }
+@media only screen and (max-height: 700px) { .race-map { height: 450px; } }
 
-@media only screen and (max-height: 800px) {
-	.race-map {
-		height: 550px;
-	}
-}
+/* ----------------------------------------------------------------
+   Responsive
+   ---------------------------------------------------------------- */
 
-@media only screen and (max-height: 700px) {
-	.race-map {
-		height: 450px;
+/* short / landscape viewports: don't force a full-height hero (content was clipping) */
+@media (max-height: 560px) {
+	.photo-hero { min-height: auto; }
+	.photo-hero .wrapper {
+		justify-content: center;
+		padding-top: 84px;
+		padding-bottom: 40px;
 	}
 }
 
 @media only screen and (max-width: 1000px) {
-	.photo-hero .title-logos {
-		max-width: 220px;
-	}
-
-	.photo-hero h1 .cycling-team span {
-		font-size: 33px;
-	}
-
-	.photo-hero h1 .cycling-team:before {
-		top: -4px;
-		right: -55px;
-		bottom: -4px;
-	}
-
-	.photo-hero .hero-content {
-		bottom: 45px;
-	}
-
-	#team ul {
-		grid-gap: 40px;
-	}
-
-	#team .rider-name h3 {
-		font-size: 18px;
-	}
+	.photo-hero .title-logos { max-width: 250px; }
+	.photo-hero .cosdi { max-width: 250px; }
+	.photo-hero h1 .cycling-team span { font-size: 34px; }
+	.photo-hero h1 .cycling-team:before { top: -4px; left: -55px; bottom: -4px; }
+	#team ul { grid-gap: 28px; }
+	#team .rider-name h3 { font-size: 17px; }
+	h1 { font-size: 46px; }
+	h2 { font-size: 38px; }
 }
 
 @media only screen and (max-width: 820px) {
-	.photo-hero {
-		aspect-ratio: 16 / 11;
-	}
-
-	#team ul {
-		grid-template-columns: 1fr 1fr 1fr;
-	}
+	#team ul { grid-template-columns: repeat(3, 1fr); }
 }
 
 @media only screen and (max-width: 700px) {
 	.photo-hero {
-		background-image: url('images/zeeland/mobile-hero.jpg');
-		aspect-ratio: 1 / 1;
+		background-image: url('images/hero-grs-mobile.jpg');
+		min-height: 100vh;
 	}
+	.intro, #races, #team, #partners, #connect { padding-left: 0; padding-right: 0; }
+	.intro { padding: 64px 0 60px; }
+	#races, #team, #partners, #connect { padding-top: 70px; padding-bottom: 70px; }
 }
 
 @media only screen and (max-width: 650px) {
-	.photo-hero .button-wrap .button {
-		display: block;
-	}
-
-	.photo-hero .button:nth-child(2) {
-		margin-left: 0;
-		margin-top: 10px;
-	}
-	
-	.photo-hero:after {
-		height: 60px;
-		width: 180px;
-	}
-
-	#team ul {
-		grid-template-columns: 1fr 1fr;
+	.photo-hero .button-wrap .button { display: block; }
+	.photo-hero .button:nth-child(2) { margin-left: 0; margin-top: 12px; }
+	.photo-hero:after { height: 56px; width: 170px; }
+	#team ul { grid-template-columns: 1fr 1fr; }
+	#partners ul { gap: 26px 30px; }
+	#partners ul li { flex-basis: 38%; }
+	#partners ul li.title { flex-basis: 78%; }
 }
 
 @media only screen and (max-width: 600px) {
-	.photo-hero h1 .cycling-team:before {
-		right: -30px;
-	}
-
-	.photo-hero h1 .cycling-team span {
-		font-size: 25px;
-		letter-spacing: 3px;
-	}
-
-	#partners ul li.title img {
-		padding: 0 10px;
-	}
-
-	.photo-hero {
-		aspect-ratio: 3 / 4;
-	}
-
-	.photo-hero .hero-content {
-		bottom: 25px;
-	}
-
+	.photo-hero h1 .cycling-team:before { left: -30px; right: -300px; }
+	.photo-hero h1 .cycling-team span { font-size: 30px; letter-spacing: 1px; }
+	.photo-hero .title-logos { max-width: 210px; }
+	.photo-hero .cosdi { max-width: 210px; margin-bottom: 16px; }
+	.photo-hero .gaoc { max-width: 150px; }
 	.photo-hero:before {
-		background: linear-gradient(90deg, rgba(0,0,0,0.6) 0%, rgba(4,26,57,0) 60%, rgba(4,29,65,0) 100%);
+		background:
+			linear-gradient(to top, rgba(2,17,38,0.94) 0%, rgba(2,17,38,0.4) 45%, rgba(2,17,38,0) 80%),
+			linear-gradient(90deg, rgba(2,17,38,0.65) 0%, rgba(2,17,38,0) 70%);
 	}
+	#partners ul li.title img { padding: 0 10px; }
 
-	table {
-		font-size: 14px;
-	}
+	h1 { font-size: 35px; }
+	h2 { font-size: 27px; }
+	.intro h2 { font-size: 25px; }
+	.intro p, #connect p { font-size: 17px; }
 
-	.photo-hero .title-logos {
-		max-width: 190px;
-	}
+	#races table { font-size: 13px; }
+	#races th { padding: 0 6px 12px; }
+	#races td { padding: 12px 6px; }
 
-	.photo-hero h1 .cycling-team span {
-		font-size: 30px;
-	}
+	#team ul { grid-gap: 18px; }
+	#team .rider-name { padding: 13px 14px; }
 
-	.photo-hero .cosdi {
-		margin-bottom: 15px;
-	}
-
-	.photo-hero:after {
-		height: 40px;
-		width: 150px;
-	}
-
+	/* mobile menu */
 	#menu-toggle {
 		display: block;
 		color: #fff;
-		padding: 20px 0;
-		font-weight: 600;
 		cursor: pointer;
 		border: 0;
 		padding: 0;
 		background: transparent;
 		font-size: 18px;
+		font-weight: 600;
 		font-family: 'Inter', sans-serif;
 	}
 
-	nav {
-		display: none;
-		width: 100%;
-		padding: 7px 0;
-	}
+	nav { display: none; width: 100%; padding: 7px 0; }
+	nav li { display: block; width: 100%; font-size: 18px; }
+	nav li a { color: #fff; width: 100%; display: block; padding: 12px 0; }
+	nav li a::after { display: none; }
 
-	nav li {
-		display: block;
-		width: 100%;
-		font-size: 18px;
-	}
+	header .mobile-wrap { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+	header .wrapper { display: block; }
 
-	nav li a {
-		color: #fff;
-		width: 100%;
-		display: block;
-		padding: 10px 0px;
-	}
-
-	header .mobile-wrap {
-		display: flex;
-		justify-content: space-between;
-		width: 100%;
-	}
-
-	header .wrapper {
-		display: block;
-	}
-
-	.menu-open {
-		background: #022f5f;
-	}
-
-	.menu-open nav {
-		display: block;
-	}
-
-	h1 {
-		font-size: 35px;
-	}
-	
-	h2 {
-		font-size: 25px;
-	}
-
-	#races table {
-		font-size: 13px;
-	}
-	
-	th, td {
-		padding: 7px 3px;
-	}
-
-	#team ul {
-		grid-gap: 25px;
-	}
-}
+	.menu-open { background: var(--navy-2); }
+	.menu-open nav { display: block; }
 }
